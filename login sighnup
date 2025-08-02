@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealVibe - Login / Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #4a00e0, #8e2de2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 400px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    h2 {
+      text-align: center;
+      color: #4a00e0;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+    }
+
+    .tab {
+      padding: 0.5rem 1rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    .tab.active {
+      border-bottom: 2px solid #4a00e0;
+      font-weight: bold;
+      color: #4a00e0;
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+    }
+
+    form.active {
+      display: flex;
+    }
+
+    input {
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 0.8rem;
+      background: #4a00e0;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #5f00e6;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome to RealVibe</h2>
+    <div class="tabs">
+      <div class="tab active" onclick="showForm('login')">Login</div>
+      <div class="tab" onclick="showForm('signup')">Sign Up</div>
+    </div>
+
+    <form id="loginForm" class="active">
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <form id="signupForm">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <div class="footer-note">RealVibe © 2025</div>
+  </div>
+
+  <script>
+    function showForm(type) {
+      const loginForm = document.getElementById('loginForm');
+      const signupForm = document.getElementById('signupForm');
+      const tabs = document.querySelectorAll('.tab');
+
+      tabs.forEach(tab => tab.classList.remove('active'));
+
+      if (type === 'login') {
+        loginForm.classList.add('active');
+        signupForm.classList.remove('active');
+        tabs[0].classList.add('active');
+      } else {
+        signupForm.classList.add('active');
+        loginForm.classList.remove('active');
+        tabs[1].classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,3 +1,1 @@
-MONGO_URI=mongodb+srv://<your-username>:<your-password>@cluster0.mongodb.net/realvibe?retryWrites=true&w=majority
-JWT_SECRET=supersecretkey123
-PORT=5000
+MONGO_URI=mongodb+srv://jokkol506:g0drdMDABPBspJa1@cluster0.fibnrws.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
